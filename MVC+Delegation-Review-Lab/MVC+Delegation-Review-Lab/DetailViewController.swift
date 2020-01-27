@@ -10,13 +10,26 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    @IBOutlet weak var slider: UISlider!
+    @IBOutlet weak var stepper: UIStepper!
+    @IBOutlet weak var label: UILabel!
+    
+    weak var delegate: TextFontSizeDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func sliderChanged(_ sender: UISlider) {
+        
+    }
+    
+    @IBAction func stepperPressed(_ sender: UIStepper) {
+    }
+    
+    
     /*
     // MARK: - Navigation
 

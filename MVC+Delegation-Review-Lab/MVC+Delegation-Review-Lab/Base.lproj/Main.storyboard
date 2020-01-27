@@ -75,31 +75,37 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="115.84821428571428"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="cdE-qn-pf5">
             <objects>
-                <viewController id="PHR-5l-m8L" sceneMemberID="viewController">
+                <viewController id="PHR-5l-m8L" customClass="DetailViewController" customModule="MVC_Delegation_Review_Lab" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="plP-rj-B3a">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="P4U-68-ihn">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="P4U-68-ihn">
                                 <rect key="frame" x="0.0" y="88" width="414" height="575"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B26-p5-l4M">
-                                        <rect key="frame" x="186" y="0.0" width="42" height="144"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change TableView Font Size" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B26-p5-l4M">
+                                        <rect key="frame" x="43" y="0.0" width="328" height="162.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="nyt-Fi-cwa">
-                                        <rect key="frame" x="28.5" y="144" width="357" height="144.5"/>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="17" minValue="8" maxValue="40" translatesAutoresizingMaskIntoConstraints="NO" id="nyt-Fi-cwa">
+                                        <rect key="frame" x="-2" y="162.5" width="418" height="151"/>
+                                        <connections>
+                                            <action selector="sliderChanged:" destination="PHR-5l-m8L" eventType="valueChanged" id="qAB-rX-d00"/>
+                                        </connections>
                                     </slider>
-                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Om8-cU-RNF">
-                                        <rect key="frame" x="160" y="287.5" width="94" height="144"/>
+                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="17" minimumValue="8" maximumValue="40" translatesAutoresizingMaskIntoConstraints="NO" id="Om8-cU-RNF">
+                                        <rect key="frame" x="160" y="312.5" width="94" height="160"/>
+                                        <connections>
+                                            <action selector="stepperPressed:" destination="PHR-5l-m8L" eventType="valueChanged" id="Vm6-ne-Ag4"/>
+                                        </connections>
                                     </stepper>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CC0-It-6vR">
-                                        <rect key="frame" x="186" y="431.5" width="42" height="143.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preview Font Size 17.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CC0-It-6vR">
+                                        <rect key="frame" x="122.5" y="472.5" width="169" height="102.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -117,6 +123,11 @@
                         <viewLayoutGuide key="safeArea" id="e6Y-7i-mvG"/>
                     </view>
                     <navigationItem key="navigationItem" id="Waf-Uu-lbE"/>
+                    <connections>
+                        <outlet property="label" destination="CC0-It-6vR" id="DoO-Ze-1qa"/>
+                        <outlet property="slider" destination="nyt-Fi-cwa" id="dbG-gd-qeI"/>
+                        <outlet property="stepper" destination="Om8-cU-RNF" id="CQO-xm-ffo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TXX-Qa-5xM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
