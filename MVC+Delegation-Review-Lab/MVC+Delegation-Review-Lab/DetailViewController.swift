@@ -23,10 +23,15 @@ class DetailViewController: UIViewController {
     }
     
     @IBAction func sliderChanged(_ sender: UISlider) {
-        
+        stepper.value = Double(sender.value)
+        label.text = String(format: "Preview Font Size: %.1f", sender.value)
+        delegate?.updateFontSize(value: CGFloat(sender.value))
     }
     
     @IBAction func stepperPressed(_ sender: UIStepper) {
+        slider.value = Float(stepper.value)
+        label.text = String(format: "Preview Font Size: %.1f", sender.value)
+        delegate?.updateFontSize(value: CGFloat(sender.value))
     }
     
     
